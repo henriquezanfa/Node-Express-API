@@ -1,3 +1,6 @@
+
+const admin = require('firebase-admin')
+
 /******************************************************************/
 
 const db = require('../db/db')
@@ -54,7 +57,7 @@ class TodosController {
             title: req.body.title,
             description: req.body.description
         }
-        db.push(todo);
+        admin.database().ref('/').push(todo)
         return res.status(201).send({
             success : 'true',
             description : 'todo added successfully',
