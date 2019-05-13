@@ -1,10 +1,13 @@
 /******************************************************************/
 
 const express = require('express');
-const db = require('../db/db')
-const todoController = require('../todosControllers/todos')
+const cors = require('cors');
+const db = require('../db/db');
+const todoController = require('../todosControllers/todos');
 
 const router = express.Router()
+
+router.use(cors({ origin: true }));
 
 /******************************************************************/
 
